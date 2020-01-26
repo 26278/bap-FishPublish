@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/fish/add', 'FishController@create')->name('fish.add');
+Route::post('/fish/add', 'FishController@store')->name('fish.store');
