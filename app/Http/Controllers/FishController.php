@@ -42,6 +42,10 @@ class FishController extends Controller
                 'pub_date' => 'required | after_or_equal:today'
             ]
         );
+
+        // Gegevens opslaan in de database
+
+
         return "Mooi man!";
     }
 

@@ -17,3 +17,6 @@ Route::get('/', function () {
 
 Route::get('/fish/add', 'FishController@create')->name('fish.add');
 Route::post('/fish/add', 'FishController@store')->name('fish.store');
+
+Route::get('/fish', 'FishOverviewController@list')->name('fish.list');
+Route::get('/fish/{id}', 'FishOverviewController@caughtFish')->name('fish.details');
