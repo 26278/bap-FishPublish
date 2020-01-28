@@ -10,9 +10,9 @@
 @endsection
 
 @section('content')
-    Hier  komen de bedrijven <br>
+    Hier  komen de vangsten <br>
 
     @foreach($catches as $catch)
-        <a href="{{route('fish.details', ['id' => $catch->id])}}">{{$catch->name}}</a><br>
+        <a href="{{route('fish.details', ['id' => $catch->id])}}">{{$catch->species}}</a><br>
     @endforeach
 @endsection

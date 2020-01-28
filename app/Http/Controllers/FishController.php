@@ -52,8 +52,8 @@ class FishController extends Controller
         $fish->length = $fishData['length'];
         $fish->weight = $fishData['weight'];
         $fish->description = $fishData['description'];
-
         $fish->save();
+
 
         return "Mooi man!";
     }

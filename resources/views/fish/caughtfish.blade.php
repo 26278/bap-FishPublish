@@ -6,15 +6,15 @@
 @endsection
 
 @section('header')
-    <h1>{{$catch->name}} </h1>
+    <h1>{{$catch->species}} </h1>
     <a href="{{route('fish.list')}}">Back</a>
 @endsection
 
 @section('content')
 
-    {{$catch->address}}<br>
-    {{$catch->zipcode}}<br>
-    {{$catch->city}}<br>
-    {{$catch->country}}<br>
+    {{$catch->species}}<br>
+    {{$catch->length}}<br>
+    {{$catch->weight}}<br>
+    {{$catch->description}}<br>
 
 @endsection
