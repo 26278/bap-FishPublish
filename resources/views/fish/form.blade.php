@@ -21,13 +21,13 @@
     <form action="{{ route('fish.store') }}" method="POST">
         @csrf
         {{-- Cross Site Request Forgery --}}
-        <h2>Specie</h2>
-        @error('specie')
+        <h2>Species</h2>
+        @error('species')
         <div class="form__error-message">
             {{$message}}
         </div>
         @enderror
-        <input type="text" class="@error('specie') form__error-message @enderror" name="specie" value="{{old('specie')}}">
+        <input type="text" class="@error('species') form__error-message @enderror" name="species" value="{{old('species')}}">
         <h2>Length</h2>
         @error('length')
         <div class="form__error-message">
@@ -45,12 +45,6 @@
         @enderror
         <textarea class="@error('description')  form__error-message @enderror" name="description">{{old('description')}}</textarea>
         <h2>Publification date</h2>
-        @error('pub_date')
-        <div class="form__error-message">
-            {{$message}}
-        </div>
-        @enderror
-        <input type="date" class="@error('pub_date ') form__error-message @enderror" name="pub_date" value="{{old('pub_date')}}">
         <button type="submit">Send!</button>
     </form>
 @endsection

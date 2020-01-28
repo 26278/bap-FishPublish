@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Fish;
+
 
 class FishController extends Controller
 {
@@ -34,17 +36,24 @@ class FishController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate(
+        $fishData = $request->validate(
             [
-                'specie' => 'required | min:3',
+                'species' => 'required | min:3',
                 'length' => 'required | numeric | gt:0',
+                'weight' => 'nullable | numeric | gt:0',
                 'description' => 'required | min:10',
-                'pub_date' => 'required | after_or_equal:today'
             ]
         );
 
         // Gegevens opslaan in de database
 
+        $fish = new Fish();
+        $fish->species = $fishData['species'];
+        $fish->length = $fishData['length'];
+        $fish->weight = $fishData['weight'];
+        $fish->description = $fishData['description'];
+
+        $fish->save();
 
         return "Mooi man!";
     }
